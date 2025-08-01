@@ -25,9 +25,11 @@ public class Program {
 
             System.out.println("Enter amount for withdraw: ");
             double amount = sc.nextDouble();
+            account.withdraw(amount);
+            System.out.println(account);
 
-        }catch(RuntimeException e){
-            System.out.println("Unexpected error!" + e.getMessage());
+        }catch (RuntimeException e){
+            System.out.println(e.getMessage());
         }
 
     }

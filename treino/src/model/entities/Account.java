@@ -53,7 +53,13 @@ public class Account {
     }
 
     public void withdraw(Double amount) {
-        this.balance -= amount;
+        if(balance <= 0){
+            throw new RuntimeException("Insufficient balance!");
+        }else if (amount > withdrawLimit){
+            throw new RuntimeException("Withdraw limit exceeded!");
+        }else {
+            this.balance -= amount;
+        }
     }
 
     @Override
